@@ -1,0 +1,25 @@
+.header
+  position: relative
+  height: 95vh
+  @include rightBottomGradientWithImage($color-primary-light, $color-primary-dark,  $img-hero)
+  background-size: cover
+  background-position: top
+  @include polygonRhombusSettings()
+  // display: flex
+
+  &__logo-box
+    position: absolute
+    top: 4rem
+    left: 4rem
+
+  &__logo
+    height: 3.5rem
+
+  &__text-box
+    position: absolute
+    // Below states position w.r.t parent element
+    top: 40%
+    left: 50%
+    // Below states position w.r.t itself
+    transform: translate(-50%,-50%)
+    text-align: center

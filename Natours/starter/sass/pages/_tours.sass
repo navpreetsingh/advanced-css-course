@@ -1,0 +1,43 @@
+.section-tours
+  margin-top: -12rem
+  text-align: center
+  background-color: $color-grey-light-1
+  padding-top: 30rem
+
+  &__heading
+    margin-bottom: 10rem
+
+  &__discover-btn
+    padding-bottom: 15rem
+  
+.card__picture--
+  &1
+    @include rightBottomGradientWithImage($color-orange-light, $color-orange-dark,  $img-sea, 0.6)
+
+  &2
+    @include rightBottomGradientWithImage($color-primary-light, $color-primary-dark,  $img-forest, 0.6)
+
+  &3
+    @include rightBottomGradientWithImage($color-blue-light, $color-blue-dark,  $img-snow, 0.6)
+
+.card__heading--span-
+  &1
+    @include right-gradient($color-orange-light, $color-orange-dark, 0.80)
+  &2
+    @include right-gradient($color-primary-light, $color-primary-dark, 0.80)
+  &3
+    @include right-gradient($color-blue-light, $color-blue-dark, 0.80)
+
+.card__side--back-
+  &1
+    @include right-gradient($color-orange-light, $color-orange-dark)
+    .btn
+      color: $color-orange-dark
+
+  &2
+    @include right-gradient($color-primary-light, $color-primary-dark)
+
+  &3
+    @include right-gradient($color-blue-light, $color-blue-dark)
+    .btn
+      color: $color-blue-dark
