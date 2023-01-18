@@ -1,0 +1,30 @@
+{
+  "name": "Advanced-HTML-CSS-Course",
+  "version": "1.0.0",
+  "description": "Practicing advanced HTML/CSS course on Udemy",
+  "scripts": {
+    "watch:sass": "sass --watch Natours/starter/sass:Natours/starter/css",
+    "live:server": "cd Natours/starter; live-server",
+    "start": "npm-run-all --parallel live:server watch:sass",
+
+    "production commands": "Below are the production commands",
+    "compile:sass": "sass Natours/starter/sass:Natours/starter/css",
+    "concat:css": "concat -o Natours/starter/css/main.concat.css Natours/starter/css/*.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' Natours/starter/css/main.concat.css -o Natours/starter/css/main.prefix.css",
+    "compress:css": "sass --style compressed Natours/starter/css/main.prefix.css:Natours/starter/css/main.min.css",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Navpreet Singh",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.26.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
+}

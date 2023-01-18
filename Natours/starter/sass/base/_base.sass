@@ -1,0 +1,52 @@
+@import "animations"
+@import "typography"
+@import "animations"
+@import "utilities"
+
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: inherit
+
+html
+  // This defines what 1rem is. We have reduced the font-size to 10px
+  font-size: 62.5%
+
+  @include mobile
+    font-size: 37.5% 
+
+  @include responsive(mobile)
+    font-size: 37.5% //1rem = 6px
+  
+  @include responsive(tab-p)
+    font-size: 50% //1rem = 8px
+  
+  @include responsive(tab-l)
+    font-size: 56.25% // 1rem = 9px
+  
+  @include responsive(desktop)
+    font-size: 87.5% // 1rem = 14px
+  
+
+
+body
+  font-family: "Lato", sans-serif
+  font-weight: 400
+  font-size: $default-font-size
+  line-height: 1.7
+  color: $color-grey-dark
+  padding: 3rem
+  box-sizing: border-box
+
+  @include responsive(tab-p)
+    padding: 0
+  
+  @include responsive(mobile)
+    padding: 0
+
+  
+::selection
+  background-color: $color-primary
+  color: $color-white
