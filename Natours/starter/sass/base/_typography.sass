@@ -18,6 +18,11 @@
     // animation-duration: 1s
     // animation-timing-function: ease-out
     animation: move-in-left-bump 1s ease-out
+
+    @include responsive(mobile)
+      letter-spacing: 1rem
+      font-family: 5rem
+
     
   &--sub
     display: block
@@ -31,6 +36,8 @@
     // animation-duration: 1s
     // animation-timing-function: ease-out
     animation: move-in-right-bump 1s ease-out
+    @include responsive(mobile)
+      letter-spacing: .5rem
 
 .heading-secondary  
   display: inline-block
@@ -42,6 +49,12 @@
   color: transparent
   transition: all .2s
   letter-spacing: .2rem
+
+  @include responsive(tab-p)
+    font-size: 2.5rem
+  
+  @include responsive(mobile)
+    font-size: 2rem
 
   &:hover
     transform: skewY(2deg) skewX(15deg) scale(1.1)

@@ -11,17 +11,47 @@
     z-index: 10
     outline-offset: 2rem 
 
+    @include responsive(tab-p)
+      width: 35%
+
+    @include responsive(mobile)
+      width: 35%
+
     &--p1
       left: 0
       top: -2rem
+
+      @include responsive(tab-p)
+
+
+      @include responsive(mobile)
+
 
     &--p2
       left: 45%
       top: 2rem
 
+      @include responsive(tab-p)
+      top: -1rem
+      left: 65%
+
+
+      @include responsive(mobile)
+      top: -1rem
+      left: 65%
+
     &--p3
       left: 20%
       top: 10rem
+
+      @include responsive(tab-p)
+      top: 1rem
+      left: 32%
+
+
+      @include responsive(mobile)
+      top: 1rem
+      left: 32%
   
     &:hover
       outline: solid 1.5rem $color-primary

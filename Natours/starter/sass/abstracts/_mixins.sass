@@ -1,3 +1,72 @@
+// ***** Responsive Designs Mixins *****
+// MEDIA QUERY MANAGER
+// 0-37.5em - Mobile Portrait
+// 600-56.25em - Tablet Portrait / Mobile Landscape
+// 900-1200 - Tablet Landscape
+// 1200-1800 - Laptops
+// 1800-above - Large Desktops
+
+// 1em = 16px
+// 600px = 37.5em
+// 900px = 56.25em
+// 1200px = 75em
+// 1800px = 112.5em
+
+// $breakpoint argument choices
+// - pone
+// - tab portrait
+// - tab longitude
+// - laptop
+// - desktop
+
+// ORDER: base + typography > general layout + grid > page layout > components
+
+// TESTING: sizzy.co will helps you to test how your site looks on different devices
+
+// Browser Support: caniuse.com to check support for older browsers
+  
+@mixin mobile()
+  @media only screen and (max-width: 37.5em)
+    @content
+
+@mixin tab-p()
+  @media only screen and (min-width: 37.5em) and (max-width: 56.25em)
+    @content
+
+@mixin tab-l()
+  @media only screen and (min-width: 56.25em) and (max-width: 75em)
+    @content
+
+@mixin laptop()
+  @media only screen and (min-width: 75em) and (max-width: 112.5em)
+    @content
+
+@mixin desktop()
+  @media only screen and (min-width: 112.5em)
+    @content
+
+@mixin responsive($breakpoint)
+  // @include $breakpoint
+  @if $breakpoint == mobile
+    @media only screen and (max-width: 37.5em)
+      @content
+  
+  @if $breakpoint == tab-p
+    @media only screen and (min-width: 37.5em) and (max-width: 56.25em)
+      @content
+
+  @if $breakpoint == tab-l
+    @media only screen and (min-width: 56.25em) and (max-width: 75em)
+      @content
+
+  @if $breakpoint == laptop
+    @media only screen and (min-width: 75em) and (max-width: 112.5em)
+      @content
+
+  @if $breakpoint == desktop
+    @media only screen and (min-width: 112.5em)
+      @content
+
 @mixin rightBottomGradientWithImage($fromColor, $toColor, $imageUrl, $lighten: 0.8)
   background-color: $toColor // Fallback Color */
   background-image: -webkit-gradient(linear, top left, right bottom, from($fromColor), to($toColor)), url($imageUrl) // Saf4+, Chrome */
@@ -19,7 +88,8 @@
 
 // Use of clippy bennettfeely.com/clippy to know the polygon settings 
 @mixin polygonRhombusSettings()
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+  @supports (clip-path: polygon(0,0) or (-webkit-clip-path: polygon(0, 0)))
+    @content
 
 // @mixin leftBump()
 //   animation-name: move-in-left-bump
@@ -49,3 +119,15 @@
     content: ""
     display: table
     clear: both
+
+@mixin abs-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin all-hyphens
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto

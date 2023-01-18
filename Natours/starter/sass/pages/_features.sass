@@ -5,6 +5,12 @@
   @include rightBottomGradientWithImage($color-primary-light, $color-primary-dark,  $img-mountains)
   background-size: cover
   transform: skewY(-7deg)
+
+  @include responsive(tab-p)
+    padding-bottom: 10rem
+
+  @include responsive(mobile)
+    padding-bottom: 10rem
   
   // apply this logic to all the children
   & > *
