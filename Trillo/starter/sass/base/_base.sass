@@ -1,0 +1,126 @@
+// **** PROPERTIES OF FLEX CONTAINER ****
+// flex-direction: row | row-reverse | column | column-reverse
+
+// Wrapping of the content
+// flex-wrap: nowrap | wrap | wrap-reverse
+
+// Define where the MAIN AXIS is
+// justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
+
+// Align Items along the CROSS AXIS
+// align-items: stretch | flex-start | flex-end | center | baseline
+
+// Align content along the CROSS AXIS
+// align-content: stretch | flex-start | flex-end | center | space-between | space-around
+
+// **** PROPERTIES OF FLEX ITEMS ****
+// align-self: auto | stretch | flex-start | flex-end | center | baseline
+
+// ORDER defines in which order does items appear inside container
+// order: 0 | <integer>
+
+// 3 PROPERTIES which define WIDTH of the flex item
+// flex-grow: 0 | <integer>
+// flex-shrink: 1 | <integer>
+// flex-basis: auto | <length>
+// flex: 0 1 auto | <int> <int> <len>
+
+@import "animations"
+@import "typography"
+@import "animations"
+@import "utilities"
+
+:root
+  --color-primary: #eb2f64
+  --color-primary-light: #FF3366
+  --color-primary-dark: #BA265D
+  --shadow-dark: 0 2rem 4rem rgba(0, 0, 0, .3)
+
+  --color-grey-light-1: #faf9f9
+  --color-grey-light-2: #f4f2f2
+  --color-grey-light-3: #f0eeee
+  --color-grey-light-4: #ccc
+
+  --color-grey-dark-1: #333
+  --color-grey-dark-2: #777
+  --color-grey-dark-3: #999
+  
+  
+
+*
+  margin: 0
+  padding: 0
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+  font-size: 62.5% // 1rem = 10px, Default is 16px
+
+  @include responsive(mobile)
+    font-size: 37.5% //1rem = 6px
+  
+  @include responsive(tab-p)
+    font-size: 50% //1rem = 8px
+  
+  @include responsive(tab-l)
+    font-size: 56.25% // 1rem = 9px
+  
+
+body
+  background-color: var(--color-primary)
+  
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  line-height: 1.6
+  color: var(--color-grey-dark-2)
+
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark))
+  background-size: cover
+  background-repeat: no-repeat
+  
+  min-height: 100vh
+
+
+// Practicing FLEX
+// .container
+//   background-color: #ccc
+//   padding: 10px
+//   // height: 1500px
+
+//   display: flex
+//   flex-direction: row
+//   justify-content: space-between
+//   align-items: center
+
+//   flex-wrap: wrap
+//   align-content: flex-end
+
+// .item
+//   background-color: #f1425d
+//   padding: 30px
+//   margin: 30px
+//   color: #fff
+//   font-size: 40px
+
+//   // flex-grow: 1
+//   // flex-shrink: 1
+//   // flex-basis: auto
+
+// .i2
+//   height: 200px
+//   order: -1
+//   flex-basis: 500px
+//   flex-shrink: 0
+//   // flex: 0 0 500px
+
+// .i4
+//   font-size: 70px
+//   align-self: flex-end
+//   order: -2
+//   // flex-shrink: 5
+//   // flex-grow: 1
+//   flex-basis: 500px

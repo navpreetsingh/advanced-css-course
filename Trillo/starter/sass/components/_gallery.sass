@@ -1,0 +1,30 @@
+.gallery
+  display: flex
+  // flex-wrap: wrap
+
+  &__item
+    // flex: 0 0 33.33334%
+  
+  .image
+    width: 100%
+    display: block
+
+.recommedation__galery
+  
+  display: flex
+  flex-wrap: no-wrap
+  justify-content: center
+  align-items: center
+  
+
+  .image
+    // flex: 0 0 25%
+    box-sizing: content-box
+    border-radius: 50%
+    height: 4rem
+    width: 4rem
+    border: 3px solid #fff
+
+    &:not(:last-child)
+      margin-right: -1.5rem
+

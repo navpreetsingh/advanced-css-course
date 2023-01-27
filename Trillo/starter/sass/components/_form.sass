@@ -1,0 +1,62 @@
+
+::placeholder,
+::-webkit-input-placeholder
+  color: var(--color-grey-light-4)
+  font-weight: 100
+  // opacity: .8
+
+.search
+  // background-color: red
+  flex: 0 0 40%
+  // align-self: center
+  // flex-grow: 5
+  display: flex
+  align-items: center
+  justify-content: center
+
+  @media only screen and (max-width: $mobile)
+    order: 1
+    flex: 0 0 100%
+    margin: 2rem 0
+    background-color: var(--color-grey-light-2)
+
+  &__input
+    font-family: inherit
+    font-size: inherit
+    color: inherit
+    background-color: var(--color-grey-light-2)
+    border-radius: 100px
+    border: none
+    padding: .7rem 2rem
+    width: 90%
+    transition: all .2s
+    margin-right: -3.25rem
+
+    &:focus
+      outline: none
+      width: 100%
+      background-color: var(--color-grey-light-3)
+  
+  &__input:focus + &__button
+    background-color: var(--color-grey-light-3)
+
+  &__button
+    border: none
+    background-color: var(--color-grey-light-2)
+
+    &:focus
+      outline: none
+    
+    &:active
+      transform: translateY(.2rem)
+    // position: relative
+
+  &__icon
+    height: 2rem
+    width: 2rem
+    fill: var(--color-grey-dark-3)
+    // background: none
+    // position: absolute
+    // top: -1.5rem
+    // left: -3rem
+    // color: var(--color-grey-dark-3)
