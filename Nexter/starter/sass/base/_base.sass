@@ -70,10 +70,10 @@
 
 html
   box-sizing: border-box
-  font-size: 62.5% // 1rem = 10px, Default is 16px
+  font-size: 100% // 1rem = 10px, Default is 16px
 
   @include responsive(mobile)
-    font-size: 37.5% //1rem = 6px
+    font-size: 43.75% //1rem = 7px
   
   @include responsive(tab-p)
     font-size: 50% //1rem = 8px
@@ -81,8 +81,17 @@ html
   @include responsive(tab-l)
     font-size: 56.25% // 1rem = 9px
   
+  @include responsive(laptop)
+    font-size: 62.5% // 1rem = 10px
+  
 
 body
-  // min-width: 100vw
+  min-width: 100vw
   min-height: 100vh
+
+  font-family: $font-primary
+  color: $color-grey-dark-2
+  font-weight: 300
+  line-height: 1.6
+  font-size: 3rem
   

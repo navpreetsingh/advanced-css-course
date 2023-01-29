@@ -1,18 +1,33 @@
-// COLORS
+// ***** Responsive Designs Mixins *****
+// MEDIA QUERY MANAGER
+// 0-37.5em - Mobile Portrait
+// 600-56.25em - Tablet Portrait / Mobile Landscape
+// 900-1200 - Tablet Landscape
+// 1200-1800 - Laptops
+// 1800-above - Large Desktops
 
-// Primary: #eb2f64
-// Primary light: #FF3366
-// Primary dark: #BA265D
+// 1em = 16px
+// 600px = 37.5em
+// 900px = 56.25em
+// 1200px = 75em
+// 1800px = 112.5em
 
-// Grey light 1: #faf9f9
-// Grey light 2: #f4f2f2
-// Grey light 3: #f0eeee
-// Grey light 4: #ccc
+// $breakpoint argument choices
+// - phone / mobile
+// - tab portrait
+// - tab longitude
+// - laptop
+// - desktop
 
-// Grey dark 1: #333
-// Grey dark 2: #777
-// Grey dark 3: #999
+// ORDER: base + typography > general layout + grid > page layout > components
 
+// TESTING: sizzy.co will helps you to test how your site looks on different devices
+
+// Browser Support: caniuse.com to check support for older browsers
+
+
+  
+  
 // COLOR VARIABLES
 $color-primary: #c69963
 $color-primary-dark: #B28451
@@ -31,8 +46,14 @@ $font-display: 'Josefin Sans', sans-serif
 
 // SHADOWS
 $shadow-dark: 0 2rem 4rem rgba(black, .3)
+$shadow-light: 0 2rem 5rem rgba(black, .1)
 
 // RESPONSIVE WIDTHS
 $mobile: 37.5em
 $tab-p: 56.25em
 $tab-l: 75em
+$-laptop: 112.5em
+
+// IMAGES
+$header-bg-image: "../../img/hero.jpeg"
+$story-picture: "../../img/back.jpg"

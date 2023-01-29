@@ -1,0 +1,88 @@
+.header
+  background-image: linear-gradient(rgba($color-secondary, .95), rgba($color-secondary, .95)), url($header-bg-image)
+  background-repeat: no-repeat
+  background-size: cover
+  padding: 2rem .5rem
+
+  grid-column: full-start / col-end 6
+
+  display: grid
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr
+  grid-template-columns: minmax(min-content, max-content)
+  grid-gap: 1.5rem
+  
+  justify-content: center
+
+  @include responsive(tab-p)
+    grid-row: header-start / header-end
+    grid-column: full-start / full-end
+
+  // width: 100%
+
+  &__logo
+    grid-column: 1 / -1
+    justify-self: center
+    &-img
+      height: 3rem
+
+  // &__text
+  //   align-self: center
+  //   margin: auto 0
+  .heading-1:first-letter
+    text-transform: capitalize
+  
+  .btn
+    align-self: start
+    justify-self: start
+
+
+  &__seenon-text
+    align-self: flex-end
+    font-size: 2rem
+    font-family: $font-display
+    text-align: center
+    color: $color-grey-light-2
+
+    text-transform: capitalize
+
+    display: grid
+    grid-template-columns: 1fr max-content 1fr
+    grid-column-gap: 3rem
+    justify-items: center
+    align-items: center
+
+    &::before,
+    &::after
+      content: ""
+      width: 100%
+      height: .1rem
+      background-color: currentColor
+      display: block
+      // transform: translateY(1.4rem)
+
+    &::before
+      margin-right: auto
+    
+    &::after
+      margin-left: auto
+  
+  &__seenon-logos
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-column-gap: 3rem
+    // align-items: center
+    // justify-content: end
+    justify-items: center
+
+    @include responsive(mobile)
+      grid-template-columns: repeat(2, 1fr)
+      grid-row-gap: 3rem
+
+.seenon
+  &__logos
+  &__img
+    max-height: 2.5rem
+    max-width: 100%
+    color: $color-grey-light-1
+    filter: brightness(70%)
+  

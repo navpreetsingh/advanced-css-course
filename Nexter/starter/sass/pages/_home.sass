@@ -1,0 +1,177 @@
+// REALTORS
+.realtors
+  background-color: $color-secondary
+  grid-column: col-start 7 / full-end
+  // align-self: center
+  // justify-self: center
+  display: grid
+  grid-template-rows: min-content max-content
+  grid-row-gap: 2rem
+  // grid-template-columns: min-content
+  // grid-template-rows: min-content
+  justify-content: center
+  align-content: center
+  // align-items: center
+  justify-items: center
+
+  @include responsive(tab-p)
+    grid-column: full-start / full-end
+
+  &__list
+    display: grid
+    // grid-template-rows: repeat(2, 1fr)
+    // grid-template-columns: images text
+    grid-template-columns: min-content max-content
+    grid-columm-gap: 2rem
+    grid-row-gap: 5vh
+    // grid-gap: 1rem
+    align-items: center
+    // justify-items: center
+    
+    // align-content: center
+    // justify-content: center
+
+    @include responsive(tab-p)
+      grid-template-columns: repeat(3, min-content max-content)
+      grid-column-gap: 3rem
+    
+    @include responsive(mobile)
+      grid-template-columns: min-content max-content
+    
+
+  &__name
+    // grid-row: 1 / 2
+    // grid-column: 2 / 3
+
+    text-transform: capitalize
+
+  &__sold
+    // grid-row: 2 / 3
+    // grid-column: 2 / 3
+    text-transform: uppercase
+    font-size: 1.2rem
+    color: $color-grey-light-2
+    margin-top: -.3rem
+
+  &__img
+    // grid-row: 1 / span 2
+    // row-column: 1 / 2
+    // margin-right: 2rem
+    img
+      width: 7rem
+      border-radius: 50%
+      display: block
+
+// FEATURES
+.features
+  // background-color: $color-grey-light-2
+  grid-column: center-start / center-end
+  margin: 2rem 0
+
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+  grid-gap: 6rem
+  align-items: start
+
+  @include responsive(tab-l)
+    grid-column: full-start / full-end
+
+.feature
+  display: grid
+  grid-template-columns: min-content 1fr
+  // grid-row-gap: .5rem
+  grid-column-gap: 1rem
+
+  &__icon
+    fill: $color-primary
+    width: 4.5rem
+    height: 4.5rem
+    grid-row: 1 / -1
+    transform: translateY(-1rem)
+
+  &__text
+    font-size: 1.7rem
+    grid-column: 2 / 3
+    text-align: justify
+
+
+// STORY
+.story
+
+  &__pictures
+    background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url($story-picture)
+    background-repeat: no-repeat
+    background-size: cover
+
+    grid-column: full-start / col-end 4
+
+    display: grid
+    grid-template-rows: repeat(6, 1fr)
+    grid-template-columns: repeat(6, 1fr)
+    align-items: center
+
+    @include responsive(tab-p)
+      grid-column: full-start / full-end
+
+  &__img
+
+    &--1
+      width: 100%
+      grid-row: 2 / 6
+      grid-column: 2 / 6
+      box-shadow: $shadow-light
+
+    &--2
+      width: 115%
+      grid-row: 4 / 6
+      grid-column: 4 / 7
+      z-index: 0
+      box-shadow: $shadow-dark
+
+      @include responsive(tab-p)
+        width: 100%
+  
+  &__content
+    background-color: $color-grey-light-1
+    grid-column: col-start 5 / full-end
+    padding: 6rem 8vw
+
+    // Center items with flex
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+    // align-items: flex-start
+
+    // Center items with grid
+    display: grid
+    align-content: center
+    justify-items: start
+
+    @include responsive(tab-p)
+      grid-column: full-start / full-end
+      grid-row: story-start / span 1
+
+    .heading-2
+      &:first-letter
+        text-transform: capitalize
+
+  &__text
+    font-size: 1.5rem
+    font-style: italic
+    text-align: justify
+
+
+// HOMES
+.homes
+  // background-color: yellowgreen
+  grid-column: center-start / center-end
+  margin: 5rem 0
+
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+  grid-gap: 7rem
+  align-items: center
+
+  @include responsive(tab-l)
+    grid-column: full-start / full-end

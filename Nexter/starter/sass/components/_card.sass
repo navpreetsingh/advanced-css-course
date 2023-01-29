@@ -1,0 +1,74 @@
+.home-card
+  background-color: $color-grey-light-1
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  // grid-gap: 3.5rem
+  overflow: hidden
+
+  &__img
+    width: 100%
+    grid-column: 1 / -1
+    grid-row: 1 / 2
+    z-index: 0
+
+  &__icon
+    height: 2.5rem
+    width: 2.5rem
+    fill: $color-primary
+    grid-column: 2 / 3
+    grid-row: 1 / 2
+    align-self: start
+    justify-self: end
+    z-index: 1
+    margin: 1rem 1.5rem 0 0 
+
+
+  &__name
+    background-color: $color-secondary
+
+    grid-column: 1 / -1
+    grid-row: 1 / 2
+    justify-self: center
+    align-self: end
+
+    text-transform: capitalize
+    color: $color-grey-light-1
+    font-family: $font-display
+    font-size: 1.6rem
+    font-weight: 400
+    text-align: center
+
+    transform: translateY(50%)
+    
+    width: 80%    
+    padding: 1.25rem
+    z-index: 1
+
+  &__detail-grid
+    grid-column: 1 / -1
+    grid-row: 2 / 3
+    width: 80%
+    justify-self: center
+    
+  &__details
+    font-size: 1.5rem
+
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, minmax(8rem, 1fr))
+    align-items: center
+
+    margin-top: 2rem
+
+    p
+      display: flex
+      align-items: center
+
+    &--icon
+      height: 2rem
+      width: 2rem
+      fill: $color-primary
+      margin-right: 1rem
+
+  .btn
+    grid-column: 1 / -1

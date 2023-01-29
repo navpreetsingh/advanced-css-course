@@ -20,7 +20,8 @@
 
     "nexter:watch:sass": "sass --watch Nexter/starter/sass:Nexter/starter/css",
     "nexter:live:server": "cd Nexter/starter; live-server",
-    "nexter:start": "npm-run-all --parallel nexter:live:server nexter:watch:sass",
+    "nexter:live:server:firefox": "cd Nexter/starter; live-server --browser=firefox --host=192.168.0.19",
+    "nexter:start": "npm-run-all --parallel nexter:live:server nexter:live:server:firefox nexter:watch:sass",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
