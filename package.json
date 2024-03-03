@@ -3,32 +3,35 @@
   "version": "1.0.0",
   "description": "Practicing advanced HTML/CSS course on Udemy",
   "scripts": {
-     "natour:watch:sass": "sass --watch Natours/starter/sass:Natours/starter/css",
+    "natour:watch:sass": "sass --watch Natours/starter/sass:Natours/starter/css",
     "natour:live:server": "cd Natours/starter; live-server",
     "natour:start": "npm-run-all --parallel natour:live:server natour:watch:sass",
-
     "production commands": "Below are the production commands",
     "natour:compile:sass": "sass Natours/starter/sass:Natours/starter/css",
     "natour:concat:css": "concat -o Natours/starter/css/main.concat.css Natours/starter/css/*.css",
     "natour:prefix:css": "postcss --use autoprefixer -b 'last 5 versions' Natours/starter/css/main.concat.css -o Natours/starter/css/main.prefix.css",
     "natour:compress:css": "sass --style compressed Natours/starter/css/main.prefix.css:Natours/starter/css/main.min.css",
     "natour:build:css": "npm-run-all natour:compile:sass natour:concat:css natour:prefix:css natour:compress:css",
-
     "trillo:watch:sass": "sass --watch Trillo/starter/sass:Trillo/starter/css",
     "trillo:live:server": "cd Trillo/starter; live-server",
     "trillo:start": "npm-run-all --parallel trillo:live:server trillo:watch:sass",
 
-    "nexter:watch:sass": "sass --watch Nexter/starter/sass:Nexter/starter/css",
-    "nexter:live:server": "cd Nexter/starter; live-server",
-    "nexter:live:server:firefox": "cd Nexter/starter; live-server --browser=firefox --host=192.168.0.19",
+    "nexter:watch:sass": "sass --watch 03_Nexter/starter/sass:03_Nexter/starter/css",
+    "nexter:live:server": "cd 03_Nexter/starter; live-server",
+    "nexter:live:server:firefox": "cd 03_Nexter/starter; live-server --browser=firefox --host=192.168.0.20",
     "nexter:start": "npm-run-all --parallel nexter:live:server nexter:live:server:firefox nexter:watch:sass",
 
+    "hireo:watch:sass": "sass --watch 05_hireo/sass:05_hireo/css",
+    "hireo:live:server": "cd 05_hireo; live-server",
+    "hireo:live:server:firefox": "cd 05_hireo; live-server --browser=firefox --host=192.168.0.20",
+    "hireo:start": "npm-run-all --parallel hireo:live:server hireo:live:server:firefox hireo:watch:sass",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Navpreet Singh",
   "license": "ISC",
   "dependencies": {
+    "live-server": "^1.1.0",
     "sass": "^1.26.9"
   },
   "devDependencies": {

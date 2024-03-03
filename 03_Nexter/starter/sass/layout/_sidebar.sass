@@ -36,6 +36,21 @@
   &::after
     transform: translateY(1.3rem)
 
+  &:hover
+    cursor: pointer
+    
+    &::before 
+      transform: rotate(45deg)
+      transition-duration: 2s
+      visibility: visible
+      transition-timing-function: ease-out
+
+    &::after
+      transform: rotate(135deg)
+      transition-duration: 2s
+      visibility: visible
+    visibility: hidden
+
   @include responsive(tab-l)
     // margin-right: .5rem
     margin-top: 0

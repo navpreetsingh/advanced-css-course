@@ -1,0 +1,19 @@
+/* NOTE: Reads the ref which starts with the text */
+/* a[href^="https"] { 
+  color: blue;
+} */
+
+/* NOTE: Reads the ref which ends with the text */
+a[href$="algoexpert.io"] { 
+  color: green;
+  /* background-color: white; */
+}
+
+h2 + a {
+  color: yellow;
+  background-color: black;
+}
+
+section > p {
+  color: red;
+}

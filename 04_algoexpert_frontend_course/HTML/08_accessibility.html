@@ -1,0 +1,36 @@
+<!--
+Welcome to our Playground!
+-->
+
+<div role="dialog" aria-labelledby="title">
+  <h1 id="title">Dialog Heading</h1>
+  <p>
+    The aria role and label don't change the output at all visually, but this
+    dialog is more accessible now!
+  </p>
+</div>
+
+<div aria-live="polite">My content will change</div>
+
+<body>
+  <ol role="tablist">
+    <li id="tab1" role="tab" aria-controls="panel1" aria-selected="true">
+      Tab 1
+    </li>
+    <li id="tab2" role="tab" aria-controls="panel2" aria-selected="false">
+      Tab 2
+    </li>
+    <li id="tab3" role="tab" aria-controls="panel3" aria-selected="false">
+      Tab 3
+    </li>
+  </ol>
+  <div role="tabpanel" id="panel1" aria-labelledby="tab1">
+    <p>Panel 1</p>
+  </div>
+  <div class="hidden" role="tabpanel" id="panel2" aria-labelledby="tab2">
+    <p>Panel 2</p>
+  </div>
+  <div class="hidden" role="tabpanel" id="panel3" aria-labelledby="tab3">
+    <p>Panel 3</p>
+  </div>
+</body>

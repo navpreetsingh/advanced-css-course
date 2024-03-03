@@ -720,6 +720,21 @@ body {
 .nav-btn::after {
   transform: translateY(1.3rem);
 }
+.nav-btn:hover {
+  cursor: pointer;
+  visibility: hidden;
+}
+.nav-btn:hover::before {
+  transform: rotate(45deg);
+  transition-duration: 2s;
+  visibility: visible;
+  transition-timing-function: ease-out;
+}
+.nav-btn:hover::after {
+  transform: rotate(135deg);
+  transition-duration: 2s;
+  visibility: visible;
+}
 @media only screen and (max-width: 75em) {
   .nav-btn {
     margin-top: 0;

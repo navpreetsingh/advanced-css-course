@@ -1,0 +1,37 @@
+/* Welcome to our Playground! */
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+input:focus {
+  outline: 2px solid blue;
+}
+
+input:invalid:not(:focus) {
+  outline: 2px solid red;
+}
+
+p:first-of-type{
+  color: orange;
+}
+
+p:first-child {
+  color: purple;
+}
+
+p::first-letter {
+  font-size: 2rem
+}
+
+p::before {
+  content: ">"
+}
+
+p::after {
+  content: "!"
+}
