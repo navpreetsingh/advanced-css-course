@@ -1,0 +1,98 @@
+footer
+  background-color: black
+  color: white
+  display: grid
+  grid-area: footer
+  grid-template-columns: $grid-col-12
+  grid-template-rows: repeat(12, 1fr)
+
+.footer
+  &_1
+    grid-column: start / grid-5
+    grid-row: 2 / 7
+    display: flex
+    flex-flow: column nowrap
+    @include responsive(mobile)
+      grid-row: 2 / 3
+      grid-column: start / end
+      text-align: center
+
+    img
+      width: 50%
+      height: auto
+      @include responsive(mobile)
+        width: 20%
+
+  &_2
+    grid-column: grid-5 / grid-11
+    grid-row: 2 / 7
+    text-align: center
+
+    @include responsive(mobile)
+      grid-column: start / grid-11
+      grid-row: 3 / 7
+      align-self: center
+
+    
+    p
+      font-size: 1.4rem
+      
+
+
+  &_3
+    grid-column: start / end
+    grid-row: 8 / 13
+    display: grid
+    grid-template-columns: $grid-col-12
+    grid-template-rows: [main-heading] 1fr [table-heading] 1fr [columns-start] 4fr [columns-end]
+    font-size: 1rem
+    @include responsive(mobile)
+      display: flex
+      flex-flow: column nowrap
+      gap: 5rem
+
+    > h5
+      grid-column: start / grid-4
+      grid-row: main-heading / table-heading
+      align-self: end
+      font-size: 160%
+      @include responsive(mobile)
+        text-align: center
+        align-self: center
+    
+    &--table
+      grid-row: table-heading / columns-end
+      display: grid
+      grid-template-rows: 1fr 3fr
+
+      h6
+        text-transform: uppercase
+        align-self: center
+        font-size: 120%
+
+      li
+        list-style-type: none
+        
+      a
+        color: white
+        text-decoration: none
+        
+    
+    &--row1
+      grid-column: start / grid-4
+    
+    &--row2
+      grid-column: grid-4 / grid-8
+      justify-self: center
+
+      section
+        display: flex
+        flex-flow: column no-wrap
+        gap: 1rem
+        @include responsive(mobile)
+          flex-flow: column wrap
+      
+    
+    &--row3
+      grid-column: grid-8 / grid-11
+      justify-self: end      

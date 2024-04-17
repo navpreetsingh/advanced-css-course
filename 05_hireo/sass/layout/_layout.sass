@@ -1,4 +1,63 @@
 @import "header"
-@import "navigation"
-@import "popup"
+@import "main"
+@import "aside"
 @import "footer"
+@import "article"
+@import "section"
+
+
+*
+  margin: 0
+  padding: 0
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+
+html
+  box-sizing: border-box
+  font-size: 100% // 1rem = 10px, Default is 16px
+
+  @include responsive(laptop)
+    font-size: 75% // 1rem = 12px
+
+  @include responsive(tab-l)
+    font-size: 56.25% // 1rem = 9px
+  
+  @include responsive(tab-p)
+    font-size: 50% //1rem = 8px
+
+  @include responsive(mobile)
+    font-size: 37.5% //1rem = 6px
+  
+  
+  
+  
+  
+  
+
+body
+  width: 100vw
+  min-height: 100vh
+
+  font-family: $font-primary
+  color: $color-grey-dark-1
+  font-weight: 300
+  line-height: 1.6
+  font-size: 3rem
+  padding: 5rem 10rem
+  background-color: $color-primary
+
+  @include responsive(tab-l)
+    padding: 0
+    background-color: none
+
+  display: grid
+  grid-template-rows: [header] min-content [main] 1fr [footer] 80vh [end]
+  grid-template-columns: 1fr
+  grid-template-areas: "header" "main" "footer"
+  justify-content: center
+  align-content: center
+

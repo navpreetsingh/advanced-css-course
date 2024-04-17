@@ -1,0 +1,339 @@
+.section
+
+  &1
+    grid-template-rows: repeat(2, [row-start] 1fr [row-end])
+
+    &_1
+      grid-column: start / end
+      align-content: space-between
+      justify-self: center
+
+      p
+        text-align: center
+        width: 60ch
+        font-size: 2.5rem
+        @include responsive(mobile)
+          width: 35ch
+      
+      h1
+        font-size: 4rem
+        font-weight: 800
+        text-align: center
+
+    &_2
+      grid-column: start / end
+      display: grid
+      align-content: space-evenly
+      justify-items: center
+
+      p
+        text-align: center
+        width: 38ch
+        font-size: 1.5rem
+  
+  &2, &3, &5
+    grid-template-rows: repeat(5, [row-start] 1fr)
+
+    &_1
+      grid-column: start / end
+      grid-row: 1 / 6
+      z-index: 0
+      height: 100%
+      
+      
+      video
+        object-fit: cover
+    
+    &_2
+      z-index: 1
+      grid-column: start / half
+
+  &2
+    &_2
+      grid-row: 1 / 5
+      // z-index: 1
+      // align-self: start
+      // justify-self: start
+      display: grid
+      grid-template-rows: repeat(3,1fr)
+      align-content: start
+      justify-content: space-around
+      color: white
+      @include responsive(tab-p)
+        display: flex
+        flex-flow: column nowrap
+        grid-column: start / grid-7
+      @include responsive(mobile)
+        justify-self: center
+        grid-column: start / grid-10
+
+      h5
+        align-self: start
+        grid-row: 1 / 2
+        justify-self: start
+        @include responsive(mobile)
+          background-color: rgba(0,0,0,0.3) 
+
+        p
+          width: 5ch
+      
+      article
+        background-color: rgba(0,0,0,0.3) 
+        h6
+          grid-row: 2 / 3
+          align-self: end
+          justify-self: center
+          text-transform: uppercase
+          // font-size: 1rem
+        
+        p
+          grid-row: 3 / 4 
+          align-self: center
+          justify-self: center
+          text-align: center
+          width: 14ch
+          font-size: 150%
+
+
+    &_3
+      grid-column: half / end
+      grid-row: 4 / 5
+      z-index: 1
+      justify-self: start
+      align-self: end
+      position: relative
+      @include responsive(tab-p)
+        grid-column: grid-3 / end
+        justify-self: center
+      @include responsive(mobile)
+        grid-column: start / end
+        // justify-self: center
+        margin-right: 7rem
+
+      input[type=email]
+        padding-right: 11rem
+
+      input[type=submit]
+        z-index: 2
+        position: absolute
+        right: -12rem
+        top: 0.3rem
+  
+  &3
+    align-items: end
+    background-image: linear-gradient(rgba(0,0,0, .95), rgba(255,255,255, .95))
+
+    &_1
+      @include responsive(mobile)
+        height: auto
+        align-self: center
+        grid-row: 1 / 4
+    
+    &_2
+      grid-column: start / half
+      grid-row: 1 / 5
+      color: white
+      align-self: center
+      justify-self: center
+      @include responsive(tab-p)
+        align-self: start
+      @include responsive(mobile)
+        grid-row: 3 / 6
+        grid-column: start / end
+        justify-self: center
+        align-self: center
+        text-align: center
+        
+
+      .btn
+        justify-self: center
+        @include responsive(mobile)
+          margin-left: 0
+
+      h4
+        border-radius: 4rem
+        background-color: rgba(0,0,0,0.3)
+        line-height: normal
+
+  &4
+    &_1
+      grid-column: start / half
+      display: flex
+      flex-flow: column wrap
+      justify-content: space-evenly
+      align-content: space-evenly
+      @include responsive(tab-p)
+        grid-column: start / end
+        gap: 6rem
+
+      h4
+        text-transform: uppercase
+      
+      h6
+        font-size: 1.8rem
+
+      p
+        font-size: 1.4rem
+        text-align: justify
+      
+      button
+        align-self: center
+
+    &_2
+      grid-column: half / end
+      align-self: center
+      
+      @include responsive(tab-p)
+        align-self: center
+        justify-self: center
+        grid-column: start / end
+        max-height: 50vh
+        text-align: center
+
+        img
+          max-width: 80%
+      
+      @include responsive(mobile)
+        img
+          max-width: 100%
+  
+  &5
+    &_2
+      color: white
+      grid-row: row-start / span 4
+      display: flex
+      flex-flow: row wrap
+      align-content: space-evenly
+      justify-content: center
+
+      
+      @include responsive(tab-p)
+        grid-column: start / end
+
+      h4
+        text-transform: capitalize
+
+      p
+        font-size: 1.4rem
+        font-weight: 1000
+        text-align: center
+        margin: 0 12rem
+        background-color: rgba(0,0,0,0.5)
+        padding: 3rem
+
+        @include responsive(tab-p)
+          font-size: 2rem
+
+  &6
+    background-image: url($section6-bg-image)
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    grid-template-rows: repeat(8, 1fr)
+    color: white
+
+    &_1
+      grid-row: 1 / span 4
+      grid-column: start / end
+      display: grid
+      grid-template-columns: $grid-col-12
+      grid-template-rows: repeat(4, 1fr)
+      justify-items: start
+      align-items: start
+      
+
+      h6
+        font-size: 1.5rem
+        text-transform: capitalize
+        width: 12ch
+        text-align: center
+        line-height: normal
+
+        @include responsive(tab-l)
+          font-size: 1.7rem
+        @include responsive(tab-p)
+          font-size: 1.9rem
+
+      &--1
+        grid-column: grid-1 / grid-3
+        grid-row: 3 / 5
+        @include responsive(mobile)
+          grid-column: start / grid-2
+
+      &--2
+        grid-column: grid-3 / grid-5
+        grid-row: 2 / 4
+        justify-self: center
+        @include responsive(mobile)
+          grid-row: 2 / 3
+          align-self: center
+
+      &--3
+        grid-column: grid-5 / grid-7
+        grid-row: 1 / 3
+        justify-self: center
+        align-self: center
+        @include responsive(mobile)
+          grid-column: grid-6 / grid-8
+  
+      &--4
+        grid-column: grid-8 / grid-9
+        grid-row: 2 / 4
+        @include responsive(mobile)
+          grid-row: 2 / 3
+          align-self: center
+
+      &--5
+        grid-column: grid-9 / grid-11
+        grid-row: 3 / 5
+        justify-self: center
+        // @include responsive(mobile)
+        //   grid-column: grid-11 / end
+
+    &_2
+      grid-row: 5 / span 8 
+      grid-column: start / end
+      align-self: end
+      justify-self: center
+      text-align: center
+      line-height: 0.9
+      font-size: 2.5rem
+      font-weight: 800
+      max-width: 70ch
+      @include responsive(mobile)
+        margin-left: 3rem
+        margin-right: 3rem 
+
+
+  &7
+    // grid-template-rows: 1fr
+    font-size: 1.5rem
+    @include responsive(tab-p)
+      display: flex
+      flex-flow: column nowrap
+      gap: 10rem
+      align-items: stretch
+      justify-content: space-evenly
+
+    &_1
+      grid-column: grid-1 / grid-5
+      grid-row: 1 / 2
+
+    &_2
+      grid-column: half / grid-11
+      grid-row: 1 / 2
+      align-self: center
+      display: flex
+      flex-flow: row wrap
+      text-align: justify 
+      justify-content: center
+      @include responsive(tab-p)
+        margin: 0 5rem
+      @include responsive(mobile)
+        font-size: 2rem
+
+      h5
+        font-size: 2.5rem
+        order: 2
+        text-align: center
+        width: 30ch
+        align-self: center

@@ -115,3 +115,124 @@ Best way to resolve conflicts of boundaries. Mentioned in universal selector
 
 ![](../../images/grid.png)
 
+
+## Images
+
+### Background Images
+1. background-image
+2. background-clip: sets whether an element's background extends underneath its border box, padding box, or content box.
+3. background-origin: sets the background's origin: from the border start, inside the border, or inside the padding.
+4. background-repeat: sets how background images are repeated. 
+5. background-size: sets the size of the element's background image.
+
+### Image Spriting
+  - Multiple images in single file
+  - use *background-position* to get individual images
+
+## CSS Inheritance
+All properties are either inherited or non-inherited.
+- inherit
+- initial
+- unset
+- revert
+
+```
+  all: inherit
+  color: unset
+```
+
+
+## Animations
+
+### Transitions
+1. transition-property
+2. transition-duration
+3. transition-timing-function: how transition should progress. (Linear, Ease-In or Custom (cubic-bezier(), steps()))
+4. transition-delay
+5. transition: combination of all of the above
+
+### Animations
+1. animation-name
+2. animation-duration
+3. animation-fill-mode: element stay in its animated position after the animation completes
+4. animation-direction: should play in *normal* or *reverse* order. 
+5. animation-iteration-count
+6. animation-play-state: *running* or *paused* state (Used with JS)
+7. animation-timing-function: how animation should progress.
+8. animation-delay
+9. animation: shorthand of all the above values.
+
+## CSS Frameworks
+1. Tailwind: Customizable utility classes
+2. Bootstrap: Responsive pre-built components
+3. Materialize: Material UI
+4. Foundation: Highly flexible UI components
+5. Bulma: CSS only framework
+
+## CSS Pre-processors
+1. SASS: variables, mixins, @extends, nesting, looping
+2. LESS
+3. stylus
+4. PostCSS
+
+## CSS Methodologies & Best Practices
+
+### BEM
+- BEM: Block, Element, Modifier
+
+1. Blocks: Standalone elements with their own meaning. e.g. **class="menu"**
+2. Elements: Parts of a block without their own meaning. e.g. **class="menu__item"**
+3. Modifiers: Flags to change styles for blocks or elements, such as disabled or selected. e.g. **class="menu menu--diabled"**
+
+### OOCSS
+- The *object-oriented* CSS methodology. Based on object-oriented programming principles, treats ech UI components as objects.
+
+1. Structure
+2. Skin
+
+Clear distinction between **content** and **containers**. Idea is that containers should function the same, regardless of content inside of them. Moreover, content should not depend on the container it is nested within. 
+
+### Atomic CSS
+- Creates utility classes based on single declaration. Like *margin-12* class
+
+### SMACSS
+- Scalable & Modular architecture for CSS. Splits CSS into five categories
+
+1. Base: Page defaults, usually just type selectors.
+2. Layout: Major structural layout of the page, using ID and class selectors
+3. Module: smaller re-usable components
+4. State: specific states for layouts or modules, such as disabled or selected states. 
+5. Theme: Style rules for layouts adn modules related to the theme. 
+
+### [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) 
+- Inverted Triangle CSS
+
+1. Settings: Global variables affecting the entire website
+2. Tools: Mixins and functions
+3. Generic: high level generic styles
+4. Elements
+5. Objects: generic classes for large containers
+6. Components: classes for individual UI components
+7. Trumps: **!important** overrides
+
+## Performance Concerns
+1. Browser read CSS right to left
+e.g. #specific > p => Gets all paragraphs first and then see which one are in specific class or ID
+
+2. Avoid Expensive Properties
+- box-shadow
+- transform
+- position: fixed
+- :nth-child
+- and so on
+
+3. Defer non-essential CSS to prevent render blocking
+- asynchronous loading of the file
+e.g. 
+```
+<link rel="preload" as="style" href="styles.css" onload="this.onload=null; this.rel='stylesheet'">
+<!-- onload: makes sure that file is loaded once not twice -->
+<noscript> <!-- Used where browser is not able to load CSS -->
+  <link rel="stylesheet" href="styles.css">
+</noscript>
+```

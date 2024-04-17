@@ -1,13 +1,25 @@
 .btn
   font-size: 1.4rem
   font-family: $font-display
-  color: $color-grey-light-1
+  color: $color-grey-dark-1
   text-transform: uppercase
   padding: 1.8rem 3rem
   cursor: pointer
   border: none
   box-shadow: $shadow-dark
   transition: all .2s
+  background-color: $color-primary
+
+  &-black
+    background-color: rgb(0,0,0)
+    color: $color-grey-light-1
+
+  &-white
+    background-color: rgb(255,255,255)
+
+  &-round
+    border-radius: 4rem
+
 
   &:hover
-    transform: translateX(.5rem) translateY(-.5rem) scale(1.05)
+    transform: translateX(.2rem) translateY(-.2rem) scale(1.01)
